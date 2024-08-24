@@ -20,14 +20,14 @@ class FriendRequestSent extends Notification
 
     public function via($notifiable)
     {
-        return ['database']; // Atau tambahkan 'mail' jika ingin mengirim email
+        return ['database']; 
     }
 
     public function toDatabase($notifiable)
     {
         return [
             'message' => "User {$this->sender_id} has sent you a friend request.",
-            'action_url' => url('/notifications'), // Atur URL yang sesuai
+            'action_url' => url('/notifications'),
         ];
     }
 }
